@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sarcastic Circus | A Different Kind of View of the World</title>
+    <meta name="description" content="Welcome to The Sarcastic Circus, where we offer a different kind of view of the world through captivating images, insightful blogs, and exclusive deals.">
+    <meta name="keywords" content="Sarcastic Circus, Circus Blog, Circus Images, Circus Deals, Different View">
+    <meta name="author" content="The Sarcastic Circus">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The Sarcastic Circus | A Different Kind of View of the World">
+    <meta property="og:description" content="Dive into a world of satire and wonder with The Sarcastic Circus. Explore our images, blogs, and deals.">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:title" content="The Sarcastic Circus | A Different Kind of View of the World">
+    <meta name="twitter:description" content="Dive into a world of satire and wonder with The Sarcastic Circus. Explore our images, blogs, and deals.">
+    <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://yourwebsite.com">
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Inline CSS */
+        :root {
+            --primary-color: #FF0000; /* Red */
+            --secondary-color: #FFD700; /* Gold */
+            --accent-color: #0000FF; /* Blue */
+            --text-color: #333;
+            --background-color: #ffffff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            max-width: 100%;
+            padding: 2rem 0;
+            background-color: #f5f5f5;
+        }
+        .section {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #hero {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+        }
+        #hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        #hero h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        #hero h2 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        #hero .tagline {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: var(--primary-color);
+        }
+        #services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #services li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        #services li:last-child {
+            border-bottom: none;
+        }
+        #services li::before {
+            content: "🎪";
+            margin-right: 0.5rem;
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #00008B;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 840px) {
+            .section {
+                margin: 0 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <img src="logo.jpg" alt="The Sarcastic Circus Logo" width="200" height="200" fetchpriority="high">
+            <h1>The Sarcastic Circus</h1>
+            <h2>A Different Kind of View of the World</h2>
+            <p class="tagline">Step Right Up to a World of Satire and Wonder!</p>
+        </section>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <h2>Welcome to The Sarcastic Circus</h2>
+            <p>Experience the spectacle of life through a satirical lens. Join us as we explore the absurdities of the world with a touch of humor and a dash of wit.</p>
+        </section>
+        <!-- Images Section -->
+        <section id="images" class="section">
+            <h2>Gallery of Wonders</h2>
+            <p>Feast your eyes on a collection of captivating images that showcase the whimsical and the bizarre.</p>
+            <!-- Image Gallery (Placeholder Images) -->
+            <div class="gallery">
+                <img src="image1.jpg" alt="Circus Image 1" width="200">
+                <img src="image2.jpg" alt="Circus Image 2" width="200">
+                <img src="image3.jpg" alt="Circus Image 3" width="200">
+            </div>
+        </section>
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <h2>The Big Top Blog</h2>
+            <p>Dive into our latest articles where we discuss the world's quirks and oddities.</p>
+            <!-- Blog Posts (Placeholder Content) -->
+            <article>
+                <h3><a href="#">The Art of Juggling Life's Challenges</a></h3>
+                <p>Discover how balancing work and play is just like juggling flaming torches.</p>
+            </article>
+            <article>
+                <h3><a href="#">Taming the Lions of Modern Society</a></h3>
+                <p>A satirical take on facing the fierce challenges of today's world.</p>
+            </article>
+        </section>
+        <!-- Deals Section -->
+        <section id="deals" class="section">
+            <h2>Exclusive Deals</h2>
+            <p>Don't miss out on our special offers and promotions!</p>
+            <!-- Deals List (Placeholder Content) -->
+            <ul>
+                <li><strong>50% Off</strong> on all merchandise for first-time visitors!</li>
+                <li>Subscribe to our newsletter and get a <strong>free e-book</strong>.</li>
+            </ul>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Get in Touch</h2>
+            <p>Have questions or comments? We'd love to hear from you!</p>
+            <!-- Contact Form -->
+            <form name="contact" method="POST" data-netlify="true" action="/success">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 The Sarcastic Circus. All rights reserved.</p>
+    </footer>
+    <!-- Chatbot Script -->
+    <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="YOUR_BOT_ID"></script>
+</body>
+</html>
