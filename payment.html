@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments - Sarcastic Circus</title>
+    <meta name="description" content="Make a payment to Sarcastic Circus via PayPal or Stripe.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Stripe.js if needed -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Include header and navigation -->
+    <header>
+        <h1>Payments</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="products.html">Products & Services</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>PayPal Payment</h2>
+            <img src="images/paypal-qr-code.png" alt="PayPal QR Code">
+            <p>Scan the QR code to make a payment via PayPal.</p>
+        </section>
+        <section>
+            <h2>Stripe Payment</h2>
+            <!-- Stripe payment form or button -->
+            <form action="/charge" method="post" id="payment-form">
+                <div class="form-row">
+                    <label for="card-element">
+                        Credit or debit card
+                    </label>
+                    <div id="card-element">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+                    <!-- Used to display form errors -->
+                    <div id="card-errors" role="alert"></div>
+                </div>
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sarcastic Circus</p>
+    </footer>
+    <!-- Include Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/stripe.js"></script>
+</body>
+</html>
