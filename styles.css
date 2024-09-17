@@ -1,0 +1,127 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff6666, #ffcc00);
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffcc00;
+    background-image: radial-gradient(circle, #ffcc00, #ff9966);
+    color: #fff;
+    text-shadow: 2px 2px #000;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 20px 0 10px;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #cc3300;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h3 {
+    font-size: 1.8em;
+    color: #cc3300;
+}
+
+main p {
+    font-size: 1.2em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #cc3300;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer input,
+footer textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+footer button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #ff9933;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+}
