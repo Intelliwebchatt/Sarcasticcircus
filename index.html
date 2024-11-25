@@ -16,8 +16,121 @@
             line-height: 1.6;
             background-color: #1a1a1a;
             color: #fff;
+            padding-top: 60px; /* Space for fixed nav */
         }
 
+        nav {
+            background: #1a1a1a;
+            height: 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #ffd700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Audio Player Styles */
+        .audio-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #2c2c2c;
+            padding: 1rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 200px;
+        }
+
+        .track-thumbnail {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .play-btn {
+            background: #ffd700;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 4px;
+            background: #444;
+            cursor: pointer;
+            position: relative;
+            max-width: 400px;
+        }
+
+        .progress {
+            height: 100%;
+            background: #ffd700;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .volume-slider {
+            width: 100px;
+        }
+
+        /* Rest of the previous styles */
         header {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('/api/placeholder/1200/600');
@@ -38,33 +151,6 @@
             color: #f8f8f8;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 1rem;
-        }
-
-        nav {
-            background: #2c2c2c;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd700;
         }
 
         .featured-artist {
@@ -109,6 +195,7 @@
             padding: 2rem;
             text-align: center;
             margin-top: 4rem;
+            margin-bottom: 80px; /* Space for audio player */
         }
 
         @media (max-width: 768px) {
@@ -116,16 +203,28 @@
                 font-size: 2.5rem;
             }
             
+            nav {
+                padding: 0 1rem;
+            }
+
             nav ul {
-                flex-direction: column;
-                text-align: center;
                 gap: 1rem;
+            }
+
+            .audio-player {
+                flex-direction: column;
+                padding: 0.5rem;
+            }
+
+            .progress-bar {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <nav>
+        <div class="nav-brand">BILOXI BLUES</div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#artists">Artists</a></li>
@@ -133,6 +232,26 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <div class="audio-player">
+        <div class="track-info">
+            <img src="/api/placeholder/40/40" alt="Track thumbnail" class="track-thumbnail">
+            <div>
+                <div style="font-weight: bold">Trailer Park Anthem</div>
+                <div style="font-size: 0.8rem">Ryder McCoy</div>
+            </div>
+        </div>
+        <div class="audio-controls">
+            <button class="play-btn" id="playBtn">▶</button>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" class="volume-slider" min="0" max="100" value="100">
+            </div>
+        </div>
+    </div>
 
     <header id="home">
         <div class="logo">BILOXI BLUES RECORDS</div>
@@ -168,7 +287,44 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Audio Player functionality
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progress = document.getElementById('progress');
+        const volumeSlider = document.querySelector('.volume-slider');
+        
+        // Create audio element
+        const audio = new Audio();
+        audio.src = 'path-to-your-audio-file.mp3'; // Replace with actual audio file path
+        
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.innerHTML = '▶';
+            } else {
+                audio.play();
+                playBtn.innerHTML = '❚❚';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const percentage = (audio.currentTime / audio.duration) * 100;
+            progress.style.width = percentage + '%';
+        });
+
+        progressBar.addEventListener('click', (e) => {
+            const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
+            audio.currentTime = clickPosition * audio.duration;
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value / 100;
+        });
+
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -176,16 +332,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Add fixed nav class on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = '#1a1a1a';
-            } else {
-                nav.style.background = '#2c2c2c';
-            }
         });
     </script>
 </body>
