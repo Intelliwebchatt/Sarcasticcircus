@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biloxi Blues Records - Ryder McCoy</title>
+    <title>Biloxi Blues Records - Southern Soul & Sound</title>
     <style>
+        /* Previous base styles remain the same */
         * {
             margin: 0;
             padding: 0;
@@ -14,19 +15,19 @@
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
-            background-color: #0a0a0a;
+            background-color: #1a1a1a;
             color: #fff;
             padding-top: 60px;
         }
 
         nav {
-            background: rgba(10, 10, 10, 0.95);
+            background: #1a1a1a;
             height: 60px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid #c17f00;
+            border-bottom: 2px solid #ffd700;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -36,8 +37,7 @@
         .nav-brand {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #c17f00;
-            font-family: 'Arial Black', sans-serif;
+            color: #ffd700;
         }
 
         nav ul {
@@ -52,63 +52,43 @@
             text-decoration: none;
             font-size: 1rem;
             transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         nav a:hover {
-            color: #c17f00;
+            color: #ffd700;
         }
 
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
-                        url('/api/placeholder/1200/800');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-        }
-
+        /* Artist Profile Styles */
         .artist-profile {
             padding: 4rem 2rem;
-            background: #151515;
-            position: relative;
-        }
-
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+            background: #2c2c2c;
+            text-align: center;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .artist-image-container {
-            position: sticky;
-            top: 80px;
+        .artist-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .artist-image {
-            width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .track-player {
-            background: #0a0a0a;
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin: 2rem 0;
-            border: 1px solid #333;
+            width: 100%;
+            max-width: 600px;
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem auto;
         }
 
         .track-info {
@@ -119,89 +99,116 @@
         }
 
         .play-btn {
-            background: #c17f00;
+            background: #ffd700;
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
-            font-size: 1.5rem;
         }
 
         .progress-bar {
             height: 4px;
-            background: #333;
+            background: #444;
             cursor: pointer;
             position: relative;
             margin: 1rem 0;
-            border-radius: 2px;
         }
 
         .progress {
             height: 100%;
-            background: #c17f00;
+            background: #ffd700;
             width: 0%;
-            border-radius: 2px;
-        }
-
-        .artist-content {
-            color: #fff;
         }
 
         .artist-bio {
-            background: #1a1a1a;
-            padding: 2rem;
-            border-radius: 4px;
-            margin-bottom: 2rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
         }
 
-        .stats-grid {
+        .artist-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
+            padding: 2rem;
+            background: #1a1a1a;
+            border-radius: 8px;
         }
 
-        .stat-box {
-            background: #0a0a0a;
-            padding: 1.5rem;
-            border-radius: 4px;
+        .stat-item {
             text-align: center;
-            border: 1px solid #333;
         }
 
         .stat-value {
             font-size: 2rem;
-            color: #c17f00;
-            font-weight: bold;
+            color: #ffd700;
             margin-bottom: 0.5rem;
         }
 
-        .tag {
+        .view-more-btn {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background: #c17f00;
+            padding: 1rem 2rem;
+            background: #ffd700;
             color: #000;
-            border-radius: 20px;
-            margin: 0.5rem;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
+            transition: transform 0.3s;
         }
 
-        @media (max-width: 968px) {
-            .profile-grid {
-                grid-template-columns: 1fr;
+        .view-more-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Rest of your previous styles */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #f8f8f8;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c2c2c;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                padding: 0 1rem;
             }
 
-            .artist-image-container {
-                position: relative;
-                top: 0;
+            nav ul {
+                gap: 1rem;
             }
 
-            .stats-grid {
+            .artist-stats {
                 grid-template-columns: 1fr;
             }
         }
@@ -212,99 +219,75 @@
         <div class="nav-brand">BILOXI BLUES</div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#listen">Listen</a></li>
+            <li><a href="#artists">Artists</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="artist-profile">
-        <div class="profile-grid">
-            <div class="artist-image-container">
-                <img src="/api/placeholder/600/800" alt="Ryder McCoy" class="artist-image">
-                <div class="track-player">
-                    <div class="track-info">
-                        <button class="play-btn" id="playBtn">▶</button>
-                        <div>
-                            <div style="font-weight: bold; font-size: 1.2rem">Trailer Park Anthem</div>
-                            <div style="color: #888">Latest Single • 2024</div>
-                        </div>
-                    </div>
-                    <div class="progress-bar" id="progressBar">
-                        <div class="progress" id="progress"></div>
-                    </div>
+    <header id="home">
+        <div class="logo">BILOXI BLUES RECORDS</div>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">Where Southern Soul Meets Modern Sound</p>
+        <a href="#artists" class="view-more-btn">DISCOVER OUR ARTISTS</a>
+    </header>
+
+    <section id="artists" class="artist-profile">
+        <div class="artist-header">
+            <img src="/api/placeholder/300/300" alt="Ryder McCoy" class="artist-image">
+            <h2 style="font-size: 2.5rem;">RYDER McCOY</h2>
+        </div>
+
+        <div class="track-player">
+            <div class="track-info">
+                <button class="play-btn" id="playBtn">▶</button>
+                <div>
+                    <div style="font-weight: bold">Trailer Park Anthem</div>
+                    <div style="font-size: 0.8rem">Latest Single - 2024</div>
                 </div>
             </div>
-
-            <div class="artist-content">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem">RYDER McCOY</h1>
-                <div style="margin-bottom: 2rem">
-                    <span class="tag">Southern Rock</span>
-                    <span class="tag">Hip-Hop</span>
-                    <span class="tag">Montgomery</span>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-value">100K+</div>
-                        <div>Monthly Listeners</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">5</div>
-                        <div>Singles Released</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">2024</div>
-                        <div>Signed to BBR</div>
-                    </div>
-                </div>
-
-                <div class="artist-bio">
-                    <h2 style="margin-bottom: 1rem; color: #c17f00">The Story</h2>
-                    <p style="margin-bottom: 1.5rem">
-                        From the sun-baked lots of Montgomery's trailer parks emerges Ryder McCoy, 
-                        a force of nature in the Southern music scene. With tattoo-covered arms and 
-                        a guitar slung across his back, McCoy brings an authenticity that can't be 
-                        manufactured – born from late nights around burning barrels and early mornings 
-                        in factory lines.
-                    </p>
-                    <p style="margin-bottom: 1.5rem">
-                        His sound is as unique as his story – a raw fusion of hard-hitting rap flows 
-                        laid over Southern rock riffs, creating something entirely new yet deeply rooted 
-                        in Alabama soil. Growing up on a diet of Lynyrd Skynyrd and Tupac, McCoy crafted 
-                        his signature style in backyard gatherings and local dive bars.
-                    </p>
-                    <p>
-                        In early 2024, his independent single "Trailer Park Anthem" caught fire across 
-                        the South, leading to his signing with Biloxi Blues Records. Now, with a full 
-                        album in the works, McCoy is ready to show the world what happens when Southern 
-                        rock meets modern rap with a dose of trailer park truth.
-                    </p>
-                </div>
-
-                <div style="background: #1a1a1a; padding: 2rem; border-radius: 4px;">
-                    <h2 style="margin-bottom: 1rem; color: #c17f00">Upcoming Shows</h2>
-                    <div style="display: grid; gap: 1rem;">
-                        <div style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #333;">
-                            <div>Flora-Bama Lounge</div>
-                            <div>Pensacola, FL</div>
-                            <div>Mar 15, 2024</div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #333;">
-                            <div>The Nick</div>
-                            <div>Birmingham, AL</div>
-                            <div>Mar 22, 2024</div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 1rem;">
-                            <div>Soul Kitchen</div>
-                            <div>Mobile, AL</div>
-                            <div>Apr 5, 2024</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
             </div>
         </div>
+
+        <div class="artist-stats">
+            <div class="stat-item">
+                <div class="stat-value">100K+</div>
+                <div>Monthly Listeners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">Montgomery</div>
+                <div>Hometown</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">2024</div>
+                <div>Signed</div>
+            </div>
+        </div>
+
+        <div class="artist-bio">
+            <h3 style="margin-bottom: 1rem;">The Story</h3>
+            <p>
+                Born and raised in the trailer parks of Montgomery, Alabama, Ryder McCoy's journey 
+                is the stuff of Southern legend. His unique blend of hard-hitting rap flows and 
+                Southern rock riffs emerged from late-night jam sessions around rusty fire pits 
+                and weekend performances at local dives.
+            </p>
+            <p style="margin-top: 1rem;">
+                His raw authenticity and unflinching storytelling caught the attention of Biloxi 
+                Blues Records in early 2024, leading to his breakout single "Trailer Park Anthem" 
+                that's been setting the Southern music scene on fire.
+            </p>
+        </div>
+
+        <a href="#" class="view-more-btn">VIEW FULL PROFILE</a>
     </section>
+
+    <footer id="contact">
+        <p>BILOXI BLUES RECORDS</p>
+        <p>Contact: info@biloxibluesrecords.com</p>
+        <p>&copy; 2024 Biloxi Blues Records. All Rights Reserved.</p>
+    </footer>
 
     <script>
         // Audio Player functionality
@@ -336,6 +319,16 @@
         progressBar.addEventListener('click', (e) => {
             const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
             audio.currentTime = clickPosition * audio.duration;
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
