@@ -1,66 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The New Light - Transforming Consciousness</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biloxi Blues Records - Southern Soul & Sound</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #f8f8f8;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            background: #2c2c2c;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .featured-artist {
+            padding: 4rem 2rem;
+            background: #2c2c2c;
+            text-align: center;
+        }
+
+        .artist-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ffd700;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #2c2c2c;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay">
-      <h1>The New Light</h1>
-      <p>A new way of understanding everything about human transformation</p>
-      <button class="cta-button">Discover More</button>
-    </div>
-  </section>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#artists">Artists</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <!-- Cards Section -->
-  <section class="cards-section">
-    <div class="card">
-      <h2>Consciousness as Energy</h2>
-      <p>Explore the idea of consciousness formed during the Big Bang.</p>
-    </div>
-    <div class="card">
-      <h2>The First Law of Thermodynamics</h2>
-      <p>Understand how consciousness changes form but cannot be destroyed.</p>
-    </div>
-    <div class="card">
-      <h2>Logical Physics</h2>
-      <p>Dive into the physics that support this transformative idea.</p>
-    </div>
-    <div class="card">
-      <h2>Philosophy Through Ages</h2>
-      <p>Connect ancient wisdom with modern beliefs.</p>
-    </div>
-  </section>
+    <header id="home">
+        <div class="logo">BILOXI BLUES RECORDS</div>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">Where Southern Soul Meets Modern Sound</p>
+        <a href="#artists" class="cta-button">DISCOVER OUR ARTISTS</a>
+    </header>
 
-  <!-- GIF Animation Section -->
-  <section class="animation-section">
-    <img src="path-to-your-animation.gif" alt="Transforming Energy">
-  </section>
+    <section id="artists" class="featured-artist">
+        <h2>FEATURED ARTIST</h2>
+        <img src="/api/placeholder/300/300" alt="Ryder McCoy" class="artist-image">
+        <h3 style="font-size: 2rem; margin: 1rem 0;">RYDER McCOY</h3>
+        <p style="max-width: 600px; margin: 0 auto;">
+            Straight out of Montgomery, Ryder McCoy brings the raw energy of Southern rock 
+            mixed with hard-hitting rap flows. The trailer park legend's authentic storytelling 
+            and unique sound is redefining the boundaries of Southern music.
+        </p>
+        <a href="#contact" class="cta-button">BOOK RYDER McCOY</a>
+    </section>
 
-  <!-- Contact Form -->
-  <section class="contact-section">
-    <h2>Get in Touch</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="about" class="about">
+        <h2 style="margin-bottom: 2rem;">ABOUT BILOXI BLUES RECORDS</h2>
+        <p>
+            Founded on the Mississippi Gulf Coast, Biloxi Blues Records is more than just a label – 
+            it's a movement. We're dedicated to discovering and amplifying the most authentic voices 
+            of the New South, bringing together traditional Southern sounds with contemporary styles.
+        </p>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2023 The New Light. All rights reserved.</p>
-    <div class="social-media">
-      <!-- Add your social media links here -->
-    </div>
-  </footer>
+    <footer id="contact">
+        <p>BILOXI BLUES RECORDS</p>
+        <p>Contact: info@biloxibluesrecords.com</p>
+        <p>&copy; 2024 Biloxi Blues Records. All Rights Reserved.</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add fixed nav class on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = '#1a1a1a';
+            } else {
+                nav.style.background = '#2c2c2c';
+            }
+        });
+    </script>
 </body>
 </html>
