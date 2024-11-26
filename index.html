@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biloxi Blues Records - Southern Soul & Sound</title>
     <style>
-        /* Previous base styles remain the same */
         * {
             margin: 0;
             padding: 0;
@@ -20,20 +19,29 @@
             padding-top: 60px;
         }
 
-        nav 
-<nav>
-    <div class="nav-brand">BILOXI BLUES</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#artists">Artists</a></li>
-        <li><a href="mccoy.html">Ryder McCoy</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+        nav {
+            background: #1a1a1a;
+            height: 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #ffd700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
         .nav-brand {
             font-size: 1.2rem;
             font-weight: bold;
             color: #ffd700;
+        }
+
+        .nav-brand a {
+            color: #ffd700;
+            text-decoration: none;
         }
 
         nav ul {
@@ -161,7 +169,6 @@
             transform: scale(1.05);
         }
 
-        /* Rest of your previous styles */
         header {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('/api/placeholder/1200/600');
@@ -212,11 +219,11 @@
 </head>
 <body>
     <nav>
-        <div class="nav-brand">BILOXI BLUES</div>
+        <div class="nav-brand"><a href="index.html">BILOXI BLUES</a></div>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#artists">Artists</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="mccoy.html">Ryder McCoy</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -276,7 +283,7 @@
             </p>
         </div>
 
-        <a href="#" class="view-more-btn">VIEW FULL PROFILE</a>
+        <a href="mccoy.html" class="view-more-btn">VIEW FULL PROFILE</a>
     </section>
 
     <footer id="contact">
