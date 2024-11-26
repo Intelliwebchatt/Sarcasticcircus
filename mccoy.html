@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biloxi Blues Records - Ryder McCoy</title>
+    <title>Ryder McCoy - Biloxi Blues Records</title>
     <style>
         * {
             margin: 0;
@@ -38,7 +37,11 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: #c17f00;
-            font-family: 'Arial Black', sans-serif;
+        }
+
+        .nav-brand a {
+            color: #c17f00;
+            text-decoration: none;
         }
 
         nav ul {
@@ -59,24 +62,6 @@
 
         nav a:hover {
             color: #c17f00;
-        }
-
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
-                        url('/api/placeholder/1200/800');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
         }
 
         .artist-profile {
@@ -189,155 +174,4 @@
             color: #000;
             border-radius: 20px;
             margin: 0.5rem;
-            font-weight: bold;
-        }
-
-        @media (max-width: 968px) {
-            .profile-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .artist-image-container {
-                position: relative;
-                top: 0;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-brand">BILOXI BLUES</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#listen">Listen</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="artist-profile">
-        <div class="profile-grid">
-            <div class="artist-image-container">
-                <img src="/api/placeholder/600/800" alt="Ryder McCoy" class="artist-image">
-                <div class="track-player">
-                    <div class="track-info">
-                        <button class="play-btn" id="playBtn">▶</button>
-                        <div>
-                            <div style="font-weight: bold; font-size: 1.2rem">Trailer Park Anthem</div>
-                            <div style="color: #888">Latest Single • 2024</div>
-                        </div>
-                    </div>
-                    <div class="progress-bar" id="progressBar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="artist-content">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem">RYDER McCOY</h1>
-                <div style="margin-bottom: 2rem">
-                    <span class="tag">Southern Rock</span>
-                    <span class="tag">Hip-Hop</span>
-                    <span class="tag">Montgomery</span>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-value">100K+</div>
-                        <div>Monthly Listeners</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">5</div>
-                        <div>Singles Released</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">2024</div>
-                        <div>Signed to BBR</div>
-                    </div>
-                </div>
-
-                <div class="artist-bio">
-                    <h2 style="margin-bottom: 1rem; color: #c17f00">The Story</h2>
-                    <p style="margin-bottom: 1.5rem">
-                        From the sun-baked lots of Montgomery's trailer parks emerges Ryder McCoy, 
-                        a force of nature in the Southern music scene. With tattoo-covered arms and 
-                        a guitar slung across his back, McCoy brings an authenticity that can't be 
-                        manufactured – born from late nights around burning barrels and early mornings 
-                        in factory lines.
-                    </p>
-                    <p style="margin-bottom: 1.5rem">
-                        His sound is as unique as his story – a raw fusion of hard-hitting rap flows 
-                        laid over Southern rock riffs, creating something entirely new yet deeply rooted 
-                        in Alabama soil. Growing up on a diet of Lynyrd Skynyrd and Tupac, McCoy crafted 
-                        his signature style in backyard gatherings and local dive bars.
-                    </p>
-                    <p>
-                        In early 2024, his independent single "Trailer Park Anthem" caught fire across 
-                        the South, leading to his signing with Biloxi Blues Records. Now, with a full 
-                        album in the works, McCoy is ready to show the world what happens when Southern 
-                        rock meets modern rap with a dose of trailer park truth.
-                    </p>
-                </div>
-
-                <div style="background: #1a1a1a; padding: 2rem; border-radius: 4px;">
-                    <h2 style="margin-bottom: 1rem; color: #c17f00">Upcoming Shows</h2>
-                    <div style="display: grid; gap: 1rem;">
-                        <div style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #333;">
-                            <div>Flora-Bama Lounge</div>
-                            <div>Pensacola, FL</div>
-                            <div>Mar 15, 2024</div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 1rem; border-bottom: 1px solid #333;">
-                            <div>The Nick</div>
-                            <div>Birmingham, AL</div>
-                            <div>Mar 22, 2024</div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; padding: 1rem;">
-                            <div>Soul Kitchen</div>
-                            <div>Mobile, AL</div>
-                            <div>Apr 5, 2024</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Audio Player functionality
-        const playBtn = document.getElementById('playBtn');
-        const progressBar = document.getElementById('progressBar');
-        const progress = document.getElementById('progress');
-        
-        const audio = new Audio();
-        audio.src = 'path-to-your-audio-file.mp3'; // Replace with actual audio file
-        
-        let isPlaying = false;
-
-        playBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                playBtn.innerHTML = '▶';
-            } else {
-                audio.play();
-                playBtn.innerHTML = '❚❚';
-            }
-            isPlaying = !isPlaying;
-        });
-
-        audio.addEventListener('timeupdate', () => {
-            const percentage = (audio.currentTime / audio.duration) * 100;
-            progress.style.width = percentage + '%';
-        });
-
-        progressBar.addEventListener('click', (e) => {
-            const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
-            audio.currentTime = clickPosition * audio.duration;
-        });
-    </script>
-</body>
-</html>
+            font-weight:
